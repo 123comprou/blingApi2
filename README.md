@@ -14,19 +14,32 @@ INSTALAÇÃO
 - Baixe o repositório em seu projeto ```git clone git@github.com:davicrystal/blingApi2.git```
 - Inclua/Importe o script BlingSD.php em sua classe PHP para utilização dos métodos
 
+INSTALAÇÃO COMPOSER
+===================
+
+```json
+"repositories": [
+    {
+        "type": "vcs",
+        "url": "https://github.com/123comprou/blingApi2"
+    }
+],
+"require": {
+    "123comprou/blingsdk": "dev-master"
+}
+```
+
+
+
 UTILIZAÇÃO
 ==========
 
 ```php
 
-//Importe a SDK em seu projeto
-require_once('blingApi2/BlingSDK.php');
+use Bling\BlingSDK;
 
 //Instâncie a classe BlingSDK
-$apiBling = new BlingSDK;
-
-//Defina a  API KEY
-$apiBling->apiKey = "SUA API KEY JUNTO AO BLING";
+$apiBling = new BlingSDK( " API KEY AQUI " );
 
 ```
 
