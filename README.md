@@ -60,6 +60,14 @@ Manual de integração API 2 Bling: https://www.bling.com.br/manuais-api
 
 	- $responseFormat: informe como deseja a resposta "xml" ou "json".
 
+- getProducts($intPage, $strProductCode, $responseFormat): Método para consulta de Produtos.
+
+    - $intPage: número da página a ser consultada
+
+	- $strProductCode: código do produto a ser consultado.
+
+	- $responseFormat: informe como deseja a resposta "xml" ou "json".
+
 - getOrder($strOrderCode, $responseFormat): Método para consulta de Pedidos.
 
 	- $strProductCode: código do pedido a ser consultado.
@@ -82,3 +90,5 @@ Manual de integração API 2 Bling: https://www.bling.com.br/manuais-api
 COLABORADORES
 =============
 Davi Crystal | Digital UP | davicrystal@gmail.com | http://twitter.com/davicrystal
+
+Gerbes Matos | 123Comprou | gerbes.matos@gmail.com

@@ -1,5 +1,5 @@
 {
-    "name": "rorteg/blingsdk",
+    "name": "123comprou/blingsdk",
     "description": "PHP Bling API2 SDK",
     "type": "git",
     "license": "GNU",
@@ -8,6 +8,10 @@
         {
             "name": "Davi Crystal",
             "email": "davicrystal@gmail.com"
+        },
+        {
+            "name": "Gerbes Matos",
+            "email": "gerbes.matos@gmail.com"
         }
     ],
      "autoload": {

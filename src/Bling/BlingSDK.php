@@ -30,7 +30,16 @@ class BlingSDK{
 
 	public $strApiKey = "";
 
-	/**
+    /**
+     * BlingSDK constructor.
+     * @param $strApiKey
+     */
+	public function __construct($strApiKey)
+    {
+        $this->strApiKey = $strApiKey;
+    }
+
+    /**
 	 * @name postProduct
 	 * @access public
 	 * @internal Insere um produto no ERP Bling
@@ -197,10 +206,27 @@ class BlingSDK{
 	 * @return string (json|xml)
 	 */
 
-	public function getProduct($strProductCode = NULL, $responseFormat = 'xml'){
+	public function getProduct($strProductCode = NULL, $responseFormat = 'json'){
 
 		// EXECUTA O ENVIO DE DADOS PARA O BLING
 	    return $this->sendDataToBling('produto', 'get', $strProductCode, $responseFormat);
+
+	}
+
+	/**
+	 * @name getProducts
+	 * @access public
+	 * @internal Consulta produtos no ERP Bling
+	 * @author Davi Crystal
+	 * @param string $strProductCode
+	 * @param string $responseFormat (json|xml)
+	 * @return string (json|xml)
+	 */
+
+	public function getProducts($intPage = 1, $strProductCode = NULL, $responseFormat = 'json'){
+
+		// EXECUTA O ENVIO DE DADOS PARA O BLING
+	    return $this->sendDataToBling('produtos/page=' . $intPage , 'get', $strProductCode, $responseFormat);
 
 	}
 
