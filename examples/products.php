@@ -9,7 +9,7 @@ $apiBling = new BlingSDK( " API KEY AQUI " );
 $products = [];
 
 for($p=1;$p<=20;$p++){
-    $data = json_decode($apiBling->getProducts($p,'json'));
+    $data = json_decode($apiBling->getProducts($p,['estoque'=>'S'],'json'));
     foreach($data->retorno->produtos as $item){
         $products[] = $item->produto;
     }
