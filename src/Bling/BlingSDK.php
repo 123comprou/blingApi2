@@ -308,11 +308,15 @@ class BlingSDK{
 			// SE A REQUISIÇÃO TRATAR-SE DE UM GET DE CONSULTA, PREPARA AS OPÇÕES DA URL
 			if($strAction == 'get'){
 
-					// SE O PARÂMETRO FOR INFORMADO COMO STRING O INCLUI NA AÇÃO ENVIADA AO BLING
-					if(is_string($arrayData) && $arrayData)
-						$strOptions = '/' . $arrayData . '/' . $strResponseFormat . '&apikey=' . $this->strApiKey;
-					else 
-						$strOptions = '/' . $strResponseFormat . '&apikey=' . $this->strApiKey;
+			// SE O PARÂMETRO FOR INFORMADO COMO STRING O INCLUI NA AÇÃO ENVIADA AO BLING
+			if(is_string($arrayData) && $arrayData){
+				$strOptions = '/' . $arrayData . '/' . $strResponseFormat . '&apikey=' . $this->strApiKey;
+			}else{
+				$strOptions = '/' . $strResponseFormat . '&apikey=' . $this->strApiKey;
+				foreach($arrayData as $iKey=>$iValue){
+					$strOptions.= '&'.$iKey.'='.$iValue;
+				}
+			}
 			
 			// SE A REQUISIÇÃO TRATAR-SE DE UM POST PREPARA AS OPÇÕES DA URL
 			}elseif($strAction == 'post'){
